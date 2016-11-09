@@ -11,6 +11,7 @@ doc.search('.feature-item').each do |pub|
   image = pub.search('.image_wrapper img')[0].attr('src')
   name = pub.search('h3 a')[0].text
   location = pub.search('.listings_flag')[0].text.strip
-  Pub.create!(name: name, location: location, image: image)
+  description = pub.search('.feature-item__column p').map(&:to_s).join.strip
+  Pub.create!(name: name, location: location, image: image, description: description)
 end
 
