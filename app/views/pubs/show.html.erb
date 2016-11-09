@@ -1,6 +1,10 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @pub.image %>');">
   <div class="banner-content">
-    <h1><%= @pub.name %></h1>
+    <h1>
+      <%= @pub.name %>
+      <br>
+      <%= render 'stars', stars: @pub.average %>
+    </h1>
     <p><%= @pub.location %></p>
     <a class="btn btn-primary btn-lg">GET IT</a>
   </div>
@@ -17,9 +21,7 @@
      <% @pub.reviews.each do |review| %>
      <li>
        - <%= review.content %>
-       <% review.stars.times do  %>
-       <i class="fa fa-star" aria-hidden="true" style='color:yellow;'></i>
-       <% end %>
+       <%= render 'stars', stars: review.stars %>
      </li>
      <% end %>
    </ul>
