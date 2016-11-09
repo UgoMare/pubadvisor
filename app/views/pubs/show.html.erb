@@ -35,7 +35,7 @@
  <div class="col-md-6 col-md-offset-3">
    <%= simple_form_for [@pub, @review] do |f| %>
    <%= f.input :content %>
-   <%= f.input :stars, collection: (1..5).to_a, prompt: 'Rate the pub' %>
+   <%= f.input :stars, as: :radio_buttons, collection: 1..5, item_wrapper_class: 'radio-inline' %>
    <%= f.submit 'Review', class: 'btn btn-primary' %>
    <% end %>
  </div>
