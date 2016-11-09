@@ -1,0 +1,11 @@
+<h1 class='text-center'>Welcome to PubAdvisor</h1>
+
+<div class="container">
+  <div class="row">
+
+  <% @pubs.each do |pub| %>
+    <%= render 'card', pub: pub %>
+  <% end %>
+
+  </div>
+</div>
